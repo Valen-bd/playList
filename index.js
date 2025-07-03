@@ -30,6 +30,7 @@ let isPlaying = false;
 const STORAGE_KEY = "userPlaylist";
 
 // Carrega a playlist do localStorage ou inicia vazia
+// Recupera a playlist salva anteriormente no localStorage, se existir; caso contrário, inicia com uma lista vazia.
 let playlist = JSON.parse(localStorage.getItem(STORAGE_KEY)) || [];
 
 /**
@@ -74,6 +75,7 @@ function addTrack() {
     };
 
     playlist.push(newTrack);
+    // Salva a playlist atualizada no localStorage para persistência dos dados.
     localStorage.setItem(STORAGE_KEY, JSON.stringify(playlist));
     renderPlaylist();
 
@@ -89,6 +91,7 @@ function addTrack() {
  */
 function removeTrack(index) {
     playlist.splice(index, 1);
+    // Atualiza o localStorage após remover uma música da playlist.
     localStorage.setItem(STORAGE_KEY, JSON.stringify(playlist));
     if (currentTrackIndex >= playlist.length) currentTrackIndex = 0;
     renderPlaylist();
