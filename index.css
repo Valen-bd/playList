@@ -1,0 +1,78 @@
+/* Estilo geral do player */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #ffdada;
+    margin: 0;
+    padding: 20px;
+}
+
+.music-player {
+    max-width: 600px;
+    margin: 0 auto;
+    background: rgb(253, 172, 172);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.player-controls {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+button {
+    padding: 8px 12px;
+    background: #ff2158;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #ff608f;
+}
+
+input[type="range"] {
+    width: 100px;
+}
+
+.add-track {
+    margin-bottom: 20px;
+}
+
+.add-track input {
+    display: block;
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+}
+
+.playlist ul {
+    list-style: none;
+    padding: 0;
+}
+
+.playlist li {
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.playlist li.playing {
+    background: #e6f2ff;
+}
+
+.delete-btn {
+    background: #dc3545;
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    cursor: pointer;
+}
