@@ -5,13 +5,14 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Player de Playlist</title>
     <link rel="stylesheet" href="index.css">
+   
 </head>
 <body>
+    <button class="theme-toggle-btn" id="theme-toggle-btn">🌙 Tema Escuro</button>
     <div class="music-player">
-        <h1>Minha Playlist</h1>
-        
-        
-
+        <h1>
+            🎶Minha Playlist🎶
+        </h1>
         <!-- Área de Adicionar Músicas -->
         <div class="add-track">
             <h2>Adicionar Nova Música</h2>
@@ -23,11 +24,27 @@
 
         <!-- Lista de Músicas -->
         <div class="playlist">
-            <h2>Minhas Músicas</h2>
-            <ul id="track-list"></ul>
+            <h2>🎵Minhas Música🎵</h2>
+            <ul id="track-list">
+                <!-- A imagem será adicionada via JavaScript para cada música -->
+            </ul>
         </div>
     </div>
 
     <script src="index.js"></script>
+    <script>
+        // Tema claro/escuro
+        const btn = document.getElementById('theme-toggle-btn');
+        function setTheme(theme) {
+            document.body.setAttribute('data-theme', theme);
+            btn.textContent = theme === 'dark' ? '☀️' : '🌙';
+        }
+        btn.addEventListener('click', () => {
+            const current = document.body.getAttribute('data-theme') || 'light';
+            setTheme(current === 'light' ? 'dark' : 'light');
+        });
+        // Inicializa com tema claro
+        setTheme('light');
+    </script>
 </body>
 </html>
