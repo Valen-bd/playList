@@ -46,6 +46,7 @@ function renderPlaylist() {
         li.innerHTML = `
             <span>${track.title} - ${track.artist}</span>
             <button class="delete-btn" data-index="${index}">Remover</button>
+             <button class="click-btn" id="click-btn">Favoritar</button>
         `;
         trackList.appendChild(li);
     });
@@ -101,7 +102,7 @@ function removeTrack(index) {
 /**
  * Toca a música atual
  */
-function playTrack() {
+function playTrack() {lass
     if (playlist.length === 0) return;
 
     const track = playlist[currentTrackIndex];

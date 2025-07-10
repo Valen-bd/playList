@@ -21,7 +21,7 @@
             <input type="url" id="track-url" placeholder="URL do Áudio (MP3)" required>
             <button id="add-btn">Adicionar</button>
         </div>
-
+      
         <!-- Lista de Músicas -->
         <div class="playlist">
             <h2>🎵Minhas Música🎵</h2>
@@ -29,6 +29,12 @@
                 <!-- A imagem será adicionada via JavaScript para cada música -->
             </ul>
         </div>
+    </div> 
+     <div class=" container">
+        <h2>Contador de Cliques</h2>
+        <button id="counterBtn">Clique Aqui+</button>
+        <button id="counterBtn">Clique Aqui-</button>
+        <p>Total de cliques: <span id="cliqueCount">0</span></p>
     </div>
 
     <script src="index.js"></script>
@@ -39,6 +45,19 @@
             document.body.setAttribute('data-theme', theme);
             btn.textContent = theme === 'dark' ? '☀️' : '🌙';
         }
+        document.getElementById('counterBtn').addEventListener('click',fuction {
+            let count = localStorage.getItem ('clickCount')||0;
+            count = parseInt(count) + 1;
+            localStorage.setItem('click',count);
+            document.getElementById('clickCount').textContent= count
+            }
+            document.getElementById('counterBtn').addEventListener('click',fuction {
+            let count = localStorage.getItem ('clickCount')||0;
+            count = parseInt(count) + 1;
+            localStorage.setItem('click',count);
+            document.getElementById('clickCount').textContent= count
+            )} 
+
         btn.addEventListener('click', () => {
             const current = document.body.getAttribute('data-theme') || 'light';
             setTheme(current === 'light' ? 'dark' : 'light');

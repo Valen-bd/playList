@@ -240,3 +240,8 @@ h1 {
         .theme-toggle-btn:hover {
             background: #ff608f;
         }
+.click-btn-count {
+    position: absolute;
+    top: 336px;
+    right: 900px;
+}
